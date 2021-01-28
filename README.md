@@ -59,6 +59,7 @@ Template de los diferentes servicios para cada grupo de moviles.
 ### MovilServicio
 Servicios programados para un movil. Es una copia del template de GrupoServicios para cada movil. Al asignar el grupo al movil se le dan de alta estos servicios con sus valores por defecto, pero en cada movil se podrian cambiar o agregar alguno mas.
 - moseId
+- moseMoviId movil
 - moseServId servicio
 - mosePeriodo: numero de dias
 - moseKM: numero de KMs
