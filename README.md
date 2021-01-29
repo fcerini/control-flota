@@ -68,6 +68,7 @@ Servicios programados para un movil. Es una copia del template de GrupoServicios
 ### MovilBitacora
 Log de todos los servicios y controles que se le realizan a un movil. Esta tabla tambien se usa para ver todos los controles programados **Pendientes** que estan vencidos o por vencer segun **ProximaFecha o ProximoOdometro**.
 - mobiId
+- mobiMoviId movil
 - mobiMoseId servicio programado. Podria estar en NULL si se hizo un servicio no programado.
 - mobiServId servicio
 - mobiFecha fecha del servicio 
@@ -136,15 +137,52 @@ Pueden Editarse, segun permisos:
 
 
 ## Eventos (pantallas)
+Las grillas tienen las funciones de ordenar, filtrar y paginar.
 
-- Grilla de Grupos
-  - Form de Grupos
-    - GrupoServicios
-- Grilla de Servicios
-  - Form de Servicios
-    - ServicioTareas
-- Grilla de Tareas
-  - Form de Tareas
+Y las acciones de editar, borrar y agregar.
+
+### Grilla de Grupos
+- grupId
+- grupNombre
+- grupDescripcion
+
+### Form de Grupos
+- grupNombre
+- grupDescripcion
+
+#### Grilla + Formulario de GrupoServicios
+Similar al caso de la carga del Pedido-Detalle, Servicio seria como Producto
+- servNombre
+- grusPeriodo: numero de dias por defecto en este grupo
+- grusKM: numero de KMs por defecto en este grupo
+- grusFecha: bool si se controla una fecha limite
+
+### Grilla de Servicios
+- servId
+- servNombre
+- servDescripcion
+- servPeriodo: numero de dias periodicos por defecto
+- servKM: numero de KMs por defecto
+- servFecha: bool
+
+### Form de Servicios
+- servNombre
+- servDescripcion
+- servPeriodo: numero de dias periodicos por defecto
+- servKM: numero de KMs por defecto
+- servFecha: bool
+
+#### Grilla + Formulario de ServicioTareas
+- Mostrar tareNombre
+- No Mostrar (automaticos)
+  - setaId automatico
+  - setaServId servicio seleccionado en el formulario
+  - setaTareId tarea viene del select de tareas
+
+### Grilla de Tareas
+### Form de Tareas
+
+### Otros eventos
 - Grilla (buscador) de Moviles
   - Alta de Movil
   - Edicion del Movil
