@@ -3,7 +3,6 @@ Modulo del SISEP para controlar el mantenimiento de las flotas de moviles.
 
 ## TODO
 - Choferes ver si hay que hacerles un tratamiento diferente que a los moviles...
-- Definir eventos (pantallas)
 
 
 ## Resumen
@@ -157,6 +156,8 @@ Similar al caso de la carga del Pedido-Detalle, Servicio seria como Producto
 - grusKM: numero de KMs por defecto en este grupo
 - grusFecha: bool si se controla una fecha limite
 
+Al elegir el servicio sugerir los campos periodo KM y fecha.
+
 ### Grilla de Servicios
 - servId
 - servNombre
@@ -180,7 +181,10 @@ Similar al caso de la carga del Pedido-Detalle, Servicio seria como Producto
   - setaTareId tarea viene del select de tareas
 
 ### Grilla de Tareas
+Todos los campos
 ### Form de Tareas
+Todos los campos. tareUnidadMedida cargarlo desde el API, o sea no hay una tabla pero en el PHP devolver un array con las opciones.
+
 
 ### Otros eventos
 - Grilla (buscador) de Moviles

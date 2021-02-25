@@ -42,7 +42,7 @@ include_once "globales.php";
 /************* API *************/
 
 include_once 'controllers/grupo.php';
-
+include_once 'controllers/movil.php';
 
 $app->get('/', function (Request $request, Response $response, $args) {
     $response->getBody()->write("API");

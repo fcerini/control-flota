@@ -1,5 +1,15 @@
+### MOVIL
 
-### PEDIDO
+GET http://localhost:8888/index.php/movil?patente=GWI322 HTTP/1.1
+
+### 
+GET http://localhost:8888/index.php/movil?descripcion=5741 HTTP/1.1
+
+### 
+GET http://localhost:8888/index.php/movil?dependencia=05 HTTP/1.1
+
+
+### GRUPO
 
 GET http://localhost:8888/index.php/grupo HTTP/1.1
 
