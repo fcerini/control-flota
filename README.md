@@ -109,30 +109,6 @@ En esta tabla se agregan todos los moviles a los que se les va a hacer mantenimi
 - moviModoFecha: copia del ultimo odometro
 - moviModoOdometro
 
-Estos campos estan en la tabla relacionada de AVL_Estructura. 
-
-Para visualizar:
-- activa
-- patente
-- compid + Comp.Nombre
-- tipomovilid + TipoMovil.Nombre
-- tienepatrullaje
-- borrado
-- fechaalta
-
-Pueden Editarse, segun permisos:
-- descripcion
-- marca
-- modelo
-- anio
-- chasis
-- numeromovil
-- color
-- seguro
-- poliza
-- numeromotor
-- movilestadoid + MovilEstado.Estado
-
 
 
 ## Eventos (pantallas)
@@ -182,8 +158,57 @@ Al elegir el servicio sugerir los campos periodo KM y fecha.
 
 ### Grilla de Tareas
 Todos los campos
-### Form de Tareas
+#### Form de Tareas
 Todos los campos. tareUnidadMedida cargarlo desde el API, o sea no hay una tabla pero en el PHP devolver un array con las opciones.
+
+### Grilla de Moviles
+Muestra todos los moviles que tienen control de flota.
+Opciones de filtrar por patente, descripcion o dependencia.
+Dejar tambien el buscador de la grilla, en memoria despues del filtro.
+Boton Agregar Movil.
+En cada fila de la grilla botones de Mantenimiento, Editar y Borrar.
+
+### Grilla de Agregar Movil
+Muestra TODOS los moviles.
+Opciones de filtrar por patente, descripcion o dependencia.
+Dejar tambien el buscador de la grilla, en memoria despues del filtro.
+
+En cada fila de la grilla:
+- Si el movil no tiene control de flota (borrado=null) mostrar boton de Agregar.
+- Si el movil esta borrado aclararlo y mostrar boton de Reactivar? Pedir confirmacion y cambiar borrado=0
+- Si el movil ya tiene control de flota aclararlo y no poner ningun boton.
+
+### Formulario del Movil: Agregar Movil
+Al confirmar agrega el movil a la tabla Moviles.
+Permite asignar los Grupos en una grilla de MovilGrupo porque pueden ser varios.
+Opcionalmente se podria inicializar el odometro, o sea se agregaria el primer registro en MovilOdometro y se actualizarian los datos en Movil.
+
+### Formulario del Movil: Editar Movil
+Permite asignar los Grupos en una grilla de MovilGrupo porque pueden ser varios.
+
+Mostrar y editar los campos de tabla relacionada AVL_Estructura. 
+
+Para visualizar:
+- activa
+- patente
+- compid + Comp.Nombre
+- tipomovilid + TipoMovil.Nombre
+- tienepatrullaje
+- borrado
+- fechaalta
+- movilestadoid + MovilEstado.Estado
+
+Pueden Editarse, segun permisos:
+- descripcion
+- marca
+- modelo
+- anio
+- chasis
+- numeromovil
+- color
+- seguro
+- poliza
+- numeromotor
 
 
 ### Otros eventos
