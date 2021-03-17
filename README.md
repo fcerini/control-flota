@@ -185,6 +185,7 @@ Opcionalmente se podria inicializar el odometro, o sea se agregaria el primer re
 
 ### Formulario del Movil: Editar Movil
 Permite asignar los Grupos en una grilla de MovilGrupo porque pueden ser varios.
+Al asignar un nuevo grupo deberia copiarse a MovilServicios todos los Servicios de ese grupo que figuran en GrupoServicio
 
 Mostrar y editar los campos de tabla relacionada AVL_Estructura. 
 
@@ -209,6 +210,45 @@ Pueden Editarse, segun permisos:
 - seguro
 - poliza
 - numeromotor
+
+### Mantenimiento Servicios
+Muestra una grilla de todos los servicios para ese movil de la tabla MovilServicios.
+
+Boton de Agregar
+
+Acciones en la grilla: Modificar, Borrar, Realizar Servicio
+
+Realizar Servicio: lleva al formulario de bitacora en modo agregar con ese servicio seleccionado.
+
+
+### Mantenimiento Bitacora
+Muestra una grilla de de los ultimos X servicios realizados para ese movil de la tabla MovilBitacora, ordenados descendentes.
+
+Boton de Agregar.
+
+Acciones en la grilla: Modificar, Borrar, Realizar Servicio
+
+Realizar Servicio: lleva al formulario de bitacora en modo agregar con ese servicio seleccionado (mobiMoseId y mobiServId) y una referencia al registro de la bitacora anterior (mobiId).
+
+Al confirmar la nueva bitacora se setean los siguientes campos:
+
+Nueva Bitacora
+- mobiMoviId movil seleccionado
+- mobiMoseId servicio programado desde la tabla MovilServicio. Se asigna desde los botones [Realizar Servicio], o queda en NULL si se hizo un servicio no programado.
+- mobiServId servicio elegido
+- mobiFecha fecha del servicio 
+- mobiObservaciones
+- mobiOdometro odometro del movil al momento del servicio
+- mobiProximoOdometro se calcula segun MovilServicio moseKM
+- mobiProximaFecha se calcula segun MovilServicio mosePeriodo o se carga si moseFecha=1
+- mobiIdAnterior: mobiId de Bitacora Anterior, si se entro a este formulario desde la accion Realizar Servicio de la grilla de bitacora.
+- mobiIdSiguiente: null
+- mobiPendiente: 1
+
+Bitacora Anterior
+- mobiIdSiguiente: mobiId nuevo
+- mobiPendiente: 0
+
 
 
 ### Otros eventos
